@@ -8,7 +8,13 @@ We present a novel methods for integrating intermediate omics information into g
 
 R packages:
 
-\-`tidyverse` -`lme4` -`lme4qtl` -`rrBLUP`
+-`tidyverse`
+ 
+-`lme4`
+ 
+-`lme4qtl`
+ 
+-`rrBLUP`
 
 ## Example data
 
