@@ -25,7 +25,7 @@ cat(" a is ", df$a[1], "\n")
 
 
 ## mssBLUP
-HA = sshm(GG, TT, df$a[1])
+HA = sshm(GA, TT, df$a[1])
 
 ssh = crva(
   pheno = pheno,
@@ -41,7 +41,7 @@ if (!is.null(ssh)) {write_csv(ssh, paste0(getwd(), "/result/ss/ssh_", tr, ".csv"
 
 
 ## GRA
-HA = sshm(GG, TT3, df$a[1])
+HA = sshm(GA, TT3, df$a[1])
 
 ssha2 = crva(
   pheno = pheno,
@@ -58,7 +58,7 @@ if (!is.null(ssha2)) {write_csv(ssha2, paste0(getwd(), "/result/ss_add2/ssha2_",
 
 ## GRAD
 ### with optimal weights in model GRA
-if(df$trait == "bf") {HA = sshm(GG, TT2, 0)} else {HA = sshm(GG, TT2, 1)}
+if(df$trait == "bf") {HA = sshm(GA, TA, 0)} else {HA = sshm(GA, TA, 1)}
 HD = sshm(GD, TD, df$a[1])
 
 sshd = crva(

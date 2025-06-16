@@ -46,11 +46,11 @@ ge_eff = extract_genetic_eff(ge_id, GG, GD)
 ## additive omics kernel
 dt <- as.data.table(ge_eff[["add"]][,-1])
 dt2 = dt[, which(colMeans(dt == 0, na.rm = TRUE) < 0.95), with = FALSE]
-TT3 <- dt2 %>% 
+TA <- dt2 %>% 
   as.matrix() %>% 
   scale() %>% 
   { tcrossprod(.) / ncol(.) }
-rownames(TT3)=colnames(TT3)=ge_eff[["add"]][,1]
+rownames(TA)=colnames(TA)=ge_eff[["add"]][,1]
 
 ## dominance omics kernel 
 dt3 <- as.data.table(ge_eff[["dom"]][,-1])
@@ -61,5 +61,5 @@ TD <- dt4 %>%
   { tcrossprod(.) / ncol(.) }
 rownames(TD)=colnames(TD)=ge_eff[["dom"]][,1]  
 
-save(AA, GG, GD, TT, TT3, TD, pheno, geno, file = paste0("data/data_add_dom.rdata"))
+save(AA, GG, GD, TT, TA, TD, pheno, file = paste0("data/data_add_dom.rdata"))
 
