@@ -17,7 +17,7 @@ sshm <- function(M1, M2, a = 1) {
   id1 <- as.character(rownames(M1))
   id2 <- as.character(rownames(M2))
   id1 <- id1[!id1 %in% id2]
-
+							    
   M1_11 <- M1[id1, id1]
   M1_12 <- M1[id1, id2]
   M1_21 <- M1[id2, id1]
